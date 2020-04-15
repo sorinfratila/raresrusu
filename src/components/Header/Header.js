@@ -1,7 +1,7 @@
-import { Link } from "gatsby"
-import classes from "./Header.module.css"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby';
+import classes from './Header.module.scss';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const Header = ({ siteTitle }) => {
   return (
@@ -13,8 +13,7 @@ const Header = ({ siteTitle }) => {
             style={{
               color: `white`,
               textDecoration: `none`,
-            }}
-          >
+            }}>
             {siteTitle}
           </Link>
         </h1>
@@ -24,22 +23,21 @@ const Header = ({ siteTitle }) => {
             style={{
               color: `white`,
               textDecoration: `none`,
-            }}
-          >
+            }}>
             About
           </Link>
         </h1>
       </div>
     </header>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;
