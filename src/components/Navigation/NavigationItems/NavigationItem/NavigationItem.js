@@ -6,8 +6,14 @@ import '../../../../App.scss';
 
 function NavigationItem(props) {
   const { link, children, show } = props;
+  const classesArr = [classes.NavigationItem];
+
+  if (show) {
+    classesArr.push(classes.On);
+  }
+
   return (
-    <li style={{ opacity: show ? 1 : 0 }} className={classes.NavigationItem}>
+    <li className={classesArr.join(' ')}>
       <Link activeClassName="activeLink" to={`/${link}`}>
         {children}
       </Link>

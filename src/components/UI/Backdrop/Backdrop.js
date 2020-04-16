@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import classes from './Backdrop.module.scss';
 
 function backdrop(props) {
-  const { clicked } = props;
+  const { clicked, show } = props;
+  const classesArr = [classes.Backdrop];
+  if (!show) {
+    classesArr.push(classes.Hidden);
+  }
 
-  return <div {...props} onClick={clicked} className={classes.Backdrop}></div>;
+  return <div onClick={clicked} className={classesArr.join(' ')}></div>;
 }
 
-backdrop.propTypes = { clicked: PropTypes.func };
+backdrop.propTypes = { clicked: PropTypes.func, show: PropTypes.bool };
 
 export default backdrop;

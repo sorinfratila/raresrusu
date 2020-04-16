@@ -1,56 +1,62 @@
 .NavigationItem {
   box-sizing: border-box;
-  display: block;
   list-style-image: none;
   list-style-type: none;
-  opacity: 1;
+  opacity: 0;
   width: 100%;
   margin-bottom: 0;
 
-  transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: translate3d(0, -10px, 0);
-  transition-delay: 0s;
+  &.On {
+    -webkit-transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transform: translate3d(20px, 0, 0);
+    -moz-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+    opacity: 1;
 
-  &:nth-child(1) {
-    -webkit-transition-delay: 70ms;
-    -moz-transition-delay: 70ms;
-    transition-delay: 70ms;
-  }
+    &:nth-child(1) {
+      -webkit-transition-delay: 70ms;
+      -moz-transition-delay: 70ms;
+      transition-delay: 70ms;
+    }
 
-  &:nth-child(2) {
-    -webkit-transition-delay: 120ms;
-    -moz-transition-delay: 120ms;
-    transition-delay: 120ms;
-  }
+    &:nth-child(2) {
+      -webkit-transition-delay: 120ms;
+      -moz-transition-delay: 120ms;
+      transition-delay: 120ms;
+    }
 
-  &:nth-child(3) {
-    -webkit-transition-delay: 170ms;
-    -moz-transition-delay: 170ms;
-    transition-delay: 170ms;
-  }
+    &:nth-child(3) {
+      -webkit-transition-delay: 170ms;
+      -moz-transition-delay: 170ms;
+      transition-delay: 170ms;
+    }
 
-  &:nth-child(4) {
-    -webkit-transition-delay: 220ms;
-    -moz-transition-delay: 220ms;
-    transition-delay: 220ms;
-  }
+    &:nth-child(4) {
+      -webkit-transition-delay: 220ms;
+      -moz-transition-delay: 220ms;
+      transition-delay: 220ms;
+    }
 
-  &:nth-child(5) {
-    -webkit-transition-delay: 270ms;
-    -moz-transition-delay: 270ms;
-    transition-delay: 270ms;
+    &:nth-child(5) {
+      -webkit-transition-delay: 270ms;
+      -moz-transition-delay: 270ms;
+      transition-delay: 270ms;
+    }
   }
 
   a {
+    background: transparent;
+    vertical-align: baseline;
     font-size: 4.8rem;
     line-height: 1.5em;
     color: white;
     text-decoration: none;
     box-sizing: border-box;
-    // display: inline-block;
+    display: inline-block;
     position: relative;
+    // transition-delay: 350ms;
 
     transition: color 70ms linear 0ms,
       transform 950ms cubic-bezier(0.55, 0.085, 0.68, 0.53) 0ms,
@@ -67,6 +73,23 @@
     &:hover {
       color: #6d6d6d;
     }
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translate3d(0, -10px, 0);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  50% {
+    transform: translate3d(0, -px, 0);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 }
 

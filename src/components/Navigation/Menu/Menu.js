@@ -7,16 +7,15 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 
 function Menu(props) {
   const { clicked, show } = props;
-
-  const classAgr = [classes.MenuItems];
-  if (!show) classAgr.push('Closed');
+  const classesArr = [classes.MenuItems];
+  if (show) {
+    classesArr.push(classes.Shown);
+  }
 
   return (
     <Aux>
-      <Backdrop
-        style={{ display: show ? 'block' : 'none' }}
-        clicked={clicked}></Backdrop>
-      <div className={classAgr.join(' ')}>
+      <Backdrop show={show} clicked={clicked}></Backdrop>
+      <div className={classesArr.join(' ')}>
         <NavigationItems show={show}></NavigationItems>
       </div>
     </Aux>

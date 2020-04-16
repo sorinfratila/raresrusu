@@ -4,4 +4,12 @@
   position: absolute;
   right: 0;
   width: 48rem;
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+
+  &.Shown {
+    visibility: visible;
+    min-height: 360px;
+  }
 }
