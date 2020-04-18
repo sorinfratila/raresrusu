@@ -2,42 +2,37 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const defaultContextValue = {
-  data: {
-    // set your initial data shape here
-    menuOpen: false,
-  },
-  set: () => {},
+  menuOpen: false,
+  toggleMenu: () => {},
 };
 
-const { Provider, Consumer } = React.createContext(defaultContextValue);
+const LayoutContext = React.createContext(defaultContextValue);
 
-export class LayoutContext extends Component {
+export default class LayoutProvider extends Component {
   static propTypes = {
-    children: PropTypes.node,
+    children: PropTypes.any,
   };
 
-  constructor() {
-    super();
+  state = {
+    menuOpen: false,
+  };
 
-    this.setData = this.setData.bind(this);
-    this.state = {
-      ...defaultContextValue,
-      set: this.setData,
-    };
-  }
-
-  setData(newData) {
+  toggleMenu = () => {
     this.setState(state => ({
-      data: {
-        ...state.data,
-        ...newData,
-      },
+      menuOpen: !state.menuOpen,
     }));
-  }
+  };
 
   render() {
-    return <Provider value={this.state}>{this.props.children}</Provider>;
+    const { menuOpen } = this.state;
+    const { children } = this.props;
+
+    return (
+      <LayoutContext.Provider value={{ menuOpen, toggleMenu: this.toggleMenu }}>
+        {children}
+      </LayoutContext.Provider>
+    );
   }
 }
 
-export default Consumer;
+export const LayoutConsumer = LayoutContext.Consumer;

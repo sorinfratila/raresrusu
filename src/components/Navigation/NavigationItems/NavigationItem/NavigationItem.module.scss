@@ -4,13 +4,6 @@
   width: 100%;
   margin-bottom: 0;
 
-  -webkit-transition: opacity 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition: opacity 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: opacity 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  // -webkit-transform: translate3d(20px, 0, 0);
-  // -moz-transform: translate3d(20px, 0, 0);
-  // transform: translate3d(20px, 0, 0);
-
   &.On {
     -webkit-transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -moz-transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);

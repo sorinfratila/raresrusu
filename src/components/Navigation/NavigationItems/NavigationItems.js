@@ -4,30 +4,21 @@ import NavigationItem from './NavigationItem/NavigationItem';
 import PropTypes from 'prop-types';
 
 function NavigationItems(props) {
-  const { show } = props;
-  return (
-    <ul className={classes.NavigationItems}>
-      <NavigationItem show={show} link={''}>
-        Home
+  const { show, clicked } = props;
+
+  const menuList = ['', 'portfolio', 'about', 'blog', 'contact'].map(link => {
+    return (
+      <NavigationItem clicked={clicked} key={link} show={show} link={link}>
+        {link === '' ? 'home' : link}
       </NavigationItem>
-      <NavigationItem show={show} link={'portfolio'}>
-        Portfolio
-      </NavigationItem>
-      <NavigationItem show={show} link={'about'}>
-        About
-      </NavigationItem>
-      <NavigationItem show={show} link={'blog'}>
-        Blog
-      </NavigationItem>
-      <NavigationItem show={show} link={'contact'}>
-        Contact
-      </NavigationItem>
-    </ul>
-  );
+    );
+  });
+  return <ul className={classes.NavigationItems}>{menuList}</ul>;
 }
 
 NavigationItems.propTypes = {
   show: PropTypes.bool,
+  clicked: PropTypes.func,
 };
 
 export default NavigationItems;

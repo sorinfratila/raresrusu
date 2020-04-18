@@ -16,7 +16,7 @@ function Menu(props) {
     <Aux>
       <Backdrop show={show} clicked={clicked}></Backdrop>
       <div className={classesArr.join(' ')}>
-        <NavigationItems show={show}></NavigationItems>
+        <NavigationItems clicked={clicked} show={show}></NavigationItems>
       </div>
     </Aux>
   );
@@ -25,6 +25,7 @@ function Menu(props) {
 Menu.propTypes = {
   clicked: PropTypes.func,
   show: PropTypes.bool,
+  linkClicked: PropTypes.func,
 };
 
 export default Menu;
