@@ -14,7 +14,7 @@ function NavigationItem(props) {
 
   return (
     <li className={classesArr.join(' ')}>
-      <Link activeClassName="activeLink" to={`/${link}`}>
+      <Link activeStyle={{ color: '#6d6d6d' }} to={`/${link}`}>
         {children}
       </Link>
     </li>

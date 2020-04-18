@@ -4,21 +4,22 @@ import NavigationItem from './NavigationItem/NavigationItem';
 import PropTypes from 'prop-types';
 
 function NavigationItems(props) {
+  const { show } = props;
   return (
     <ul className={classes.NavigationItems}>
-      <NavigationItem show={props.show} link={'home'}>
+      <NavigationItem show={show} link={''}>
         Home
       </NavigationItem>
-      <NavigationItem show={props.show} link={'portfolio'}>
+      <NavigationItem show={show} link={'portfolio'}>
         Portfolio
       </NavigationItem>
-      <NavigationItem show={props.show} link={'about'}>
+      <NavigationItem show={show} link={'about'}>
         About
       </NavigationItem>
-      <NavigationItem show={props.show} link={'blog'}>
+      <NavigationItem show={show} link={'blog'}>
         Blog
       </NavigationItem>
-      <NavigationItem show={props.show} link={'contact'}>
+      <NavigationItem show={show} link={'contact'}>
         Contact
       </NavigationItem>
     </ul>

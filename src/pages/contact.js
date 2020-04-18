@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'gatsby';
+// import classes from './pagesCss/portfolio.module.scss';
 
-import classes from './pagesCss/blog.module.scss';
 import Aux from '../hoc/Aux/Aux';
 // import Post from "../templates/Post/Post"
 
-const blog = () => {
+const contact = () => {
   return (
     <Aux>
-      <div className={classes.Content}></div>
+      <div>contact page</div>
       <Link to="/">Go back to the homepage</Link>
     </Aux>
   );
 };
 
-export default blog;
+export default contact;

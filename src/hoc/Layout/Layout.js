@@ -1,11 +1,4 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import MenuButton from '../../components/UI/MenuButton/MenuButton';
 // import { useStaticQuery, graphql } from "gatsby"
@@ -13,43 +6,35 @@ import MenuButton from '../../components/UI/MenuButton/MenuButton';
 // import Header from './Header/Header';
 import Aux from '../Aux/Aux';
 import Menu from '../../components/Navigation/Menu/Menu';
+import ContextConsumer from '../../context/LayoutContext';
 
-class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-  };
+const layout = props => (
+  <ContextConsumer>
+    {({ data, set }) => {
+      // console.log('layout', data, set);
+      return (
+        <Aux>
+          <MenuButton
+            clicked={() => set({ menuOpen: !data.menuOpen })}></MenuButton>
+          <Menu
+            show={data.menuOpen}
+            clicked={() => set({ menuOpen: !data.menuOpen })}></Menu>
+          <div>
+            <main>{props.children}</main>
+            <footer>
+              © {new Date().getFullYear()}, Built with
+              {` `}
+              <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </footer>
+          </div>
+        </Aux>
+      );
+    }}
+  </ContextConsumer>
+);
 
-  state = {
-    showMenu: false,
-  };
+layout.propTypes = {
+  children: PropTypes.node,
+};
 
-  toggleMenuHandler = () => {
-    this.setState(prevState => {
-      return {
-        showMenu: !prevState.showMenu,
-      };
-    });
-  };
-
-  render() {
-    const { showMenu } = this.state;
-    const { children } = this.props;
-
-    return (
-      <Aux>
-        <MenuButton clicked={this.toggleMenuHandler}></MenuButton>
-        <Menu show={showMenu} clicked={this.toggleMenuHandler}></Menu>
-        <div>
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
-      </Aux>
-    );
-  }
-}
-
-export default Layout;
+export default layout;

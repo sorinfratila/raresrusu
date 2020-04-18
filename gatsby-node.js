@@ -1,5 +1,5 @@
-const path = require(`path`)
-const { slash } = require(`gatsby-core-utils`)
+const path = require(`path`);
+const { slash } = require(`gatsby-core-utils`);
 /**
  * Implement Gatsby's Node APIs in this file.
  *

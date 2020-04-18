@@ -10,6 +10,12 @@ module.exports = {
     author: `@asdf`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/hoc/Layout/Layout.js`),
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
