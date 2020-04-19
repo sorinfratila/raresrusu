@@ -16,14 +16,7 @@ const layout = props => (
           <Menu
             show={menuOpen}
             clicked={() => toggleMenu({ menuOpen: !menuOpen })}></Menu>
-          <div>
-            <main>{props.children}</main>
-            <footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
-          </div>
+          <main>{props.children}</main>
         </Aux>
       );
     }}
