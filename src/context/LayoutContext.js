@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const defaultContextValue = {
@@ -6,33 +6,21 @@ const defaultContextValue = {
   toggleMenu: () => {},
 };
 
-const LayoutContext = React.createContext(defaultContextValue);
+export const LayoutContext = React.createContext(defaultContextValue);
 
-export default class LayoutProvider extends Component {
-  static propTypes = {
-    children: PropTypes.any,
-  };
+export const LayoutProvider = props => {
+  const [menuOpen, toggleMenu] = useState(false);
+  return (
+    <LayoutContext.Provider
+      value={{
+        menuOpen,
+        toggleMenu: () => toggleMenu(!menuOpen),
+      }}>
+      {props.children}
+    </LayoutContext.Provider>
+  );
+};
 
-  state = {
-    menuOpen: false,
-  };
-
-  toggleMenu = () => {
-    this.setState(state => ({
-      menuOpen: !state.menuOpen,
-    }));
-  };
-
-  render() {
-    const { menuOpen } = this.state;
-    const { children } = this.props;
-
-    return (
-      <LayoutContext.Provider value={{ menuOpen, toggleMenu: this.toggleMenu }}>
-        {children}
-      </LayoutContext.Provider>
-    );
-  }
-}
-
-export const LayoutConsumer = LayoutContext.Consumer;
+LayoutProvider.propTypes = {
+  children: PropTypes.node,
+};

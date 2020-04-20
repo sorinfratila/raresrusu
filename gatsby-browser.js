@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 import React from 'react';
 import PropTypes from 'prop-types';
-import LayoutProvider from './src/context/LayoutContext';
+import { LayoutProvider } from './src/context/LayoutContext';
 
 export const wrapRootElement = ({ element }) => (
   <LayoutProvider>{element}</LayoutProvider>

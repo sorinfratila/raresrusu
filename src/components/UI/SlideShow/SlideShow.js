@@ -4,9 +4,13 @@ import classes from './SlideShow.module.scss';
 import PropTypes from 'prop-types';
 
 function SlideShow(props) {
-  const { images } = props;
+  const { images = [] } = props;
   const imgArr = images.map(img => (
-    <li key={img}>
+    <li
+      key={img}
+      style={{
+        animationDuration: `${images.length * 4}s`,
+      }}>
       <img src={img} alt={img} />
     </li>
   ));
