@@ -4,13 +4,7 @@ import { Link } from 'gatsby';
 import Aux from '../hoc/Aux/Aux';
 
 class HomePage extends Component {
-  state = {
-    showMenu: false,
-  };
-
   render() {
-    // const { showMenu } = this.state;
-
     return (
       <Aux>
         <h1>Hi people</h1>

@@ -1,10 +1,20 @@
 import Typography from 'typography';
 
 const typography = new Typography({
+  googleFonts: [
+    {
+      name: 'Montserrat',
+      styles: ['400', '500', '700'],
+    },
+    {
+      name: 'Merriweather',
+      styles: ['400', '500', '400i', '700', '700i'],
+    },
+  ],
   baseFontSize: '10px',
   baseLineHeight: 1.666,
-  headerFontFamily: ['Avenir Next', 'Helvetica', 'sans-serif'],
-  bodyFontFamily: ['Avenir Next', 'Roboto', 'serif'],
+  headerFontFamily: ['Montserrat', 'sans-serif'],
+  bodyFontFamily: ['Montserrat', 'sans-serif'],
 });
 
 // Export helper functions
