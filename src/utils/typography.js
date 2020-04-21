@@ -3,18 +3,26 @@ import Typography from 'typography';
 const typography = new Typography({
   googleFonts: [
     {
-      name: 'Montserrat',
-      styles: ['400', '500', '700'],
+      name: 'Avenir Next',
+      styles: ['300', '400', '500', '600', '700'],
     },
     {
-      name: 'Merriweather',
-      styles: ['400', '500', '400i', '700', '700i'],
+      name: 'Helvetica',
+      styles: ['300', '400', '500', '600', '700'],
+    },
+    {
+      name: 'Roboto',
+      styles: ['300', '400', '500', '600', '700'],
+    },
+    {
+      name: 'sans-serif',
+      styles: ['300', '400', '500', '600', '700'],
     },
   ],
   baseFontSize: '10px',
   baseLineHeight: 1.666,
-  headerFontFamily: ['Montserrat', 'sans-serif'],
-  bodyFontFamily: ['Montserrat', 'sans-serif'],
+  headerFontFamily: ['Avenir Next', 'Helvetica', 'sans-serif'],
+  bodyFontFamily: ['Avenir Next', 'Roboto', 'sans-serif'],
 });
 
 // Export helper functions

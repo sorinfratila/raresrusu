@@ -1,7 +1,7 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-const path = require(`path`);
+// const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
@@ -20,8 +20,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `assets`, 'images', 'about'),
+        name: `src`,
+        path: `${__dirname}/src`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `typography.js`,
+        path: `${__dirname}/src/utils/typography.js`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -42,7 +49,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: 'src/utils/typography.js',
+        pathToConfigModule: './src/utils/typography',
       },
     },
     // {
