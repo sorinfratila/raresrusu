@@ -11,5 +11,6 @@
   &.Shown {
     visibility: visible;
     min-height: 360px;
+    position: fixed;
   }
 }

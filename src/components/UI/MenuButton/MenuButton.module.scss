@@ -7,10 +7,12 @@
   justify-content: space-between;
   outline: none;
   border: none;
-  position: absolute;
+  position: fixed;
+  z-index: 9;
   top: 52px;
   right: 127px;
   background-color: transparent;
+  cursor: pointer;
 
   &:hover {
     .Up {
