@@ -12,10 +12,22 @@ function NavigationItem(props) {
     classesArr.push(classes.On);
   }
 
+  const delay = func => {
+    // delay function used to toggle list item classes to obtain fade out effect
+    // when closing the menu by selecting another route
+    const onClass = classes.On;
+    delete classes.On;
+
+    return setTimeout(() => {
+      classes.On = onClass;
+      return func.apply(null);
+    }, 350);
+  };
+
   return (
     <li className={classesArr.join(' ')}>
       <Link
-        onClick={clicked}
+        onClick={() => delay(clicked)}
         activeStyle={{ color: '#6d6d6d' }}
         to={`/${link}`}>
         {children}

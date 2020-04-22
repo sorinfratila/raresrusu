@@ -9,7 +9,13 @@ function backdrop(props) {
     classesArr.push(classes.Hidden);
   }
 
-  return <div onClick={clicked} className={classesArr.join(' ')}></div>;
+  const delay = func => {
+    return setTimeout(() => func(), 0);
+  };
+
+  return (
+    <div onClick={() => delay(clicked)} className={classesArr.join(' ')}></div>
+  );
 }
 
 backdrop.propTypes = { clicked: PropTypes.func, show: PropTypes.bool };
