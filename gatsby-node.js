@@ -8,33 +8,12 @@ const { slash } = require(`gatsby-core-utils`);
 
 // You can delete this file if you're not using it
 
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   // query content for WordPress posts
-//   const result = await graphql(`
-//     query {
-//       allWordpressPost {
-//         edges {
-//           node {
-//             id
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `)
-//   const postTemplate = path.resolve(`./src/templates/Post/Post.js`)
-//   result.data.allWordpressPost.edges.forEach(edge => {
-//     createPage({
-//       // will be the url for the page
-//       path: edge.node.slug,
-//       // specify the component template of your choice
-//       component: slash(postTemplate),
-//       // In the ^template's GraphQL query, 'id' will be available
-//       // as a GraphQL variable to query for this posts's data.
-//       context: {
-//         id: edge.node.id,
-//       },
-//     })
-//   })
-// }
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions;
+  // Make the front page match everything client side.
+  // Normally your paths should be a bit more judicious.
+  if (page.path === `/portfolio/`) {
+    page.matchPath = `/portfolio/*`;
+    createPage(page);
+  }
+};
