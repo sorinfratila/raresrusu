@@ -15,7 +15,6 @@
   &.Hidden {
     opacity: 0;
     height: 0;
-    overflow: hidden;
     transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94), step-end;
   }
 }

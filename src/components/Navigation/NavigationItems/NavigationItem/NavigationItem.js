@@ -28,7 +28,10 @@ function NavigationItem(props) {
     <li className={classesArr.join(' ')}>
       <Link
         onClick={() => delay(clicked)}
-        activeStyle={{ color: '#6d6d6d' }}
+        activeStyle={{
+          color: '#6d6d6d',
+          transition: 'color, 350ms, ease-in-out',
+        }}
         to={`/${link}`}>
         {children}
       </Link>

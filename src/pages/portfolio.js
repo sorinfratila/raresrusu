@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+// import axiosInstance from '../networking/axios';
 // import classes from './pagesCss/portfolio.module.scss';
 
 // import Layout from '../hoc/Layout/Layout';
