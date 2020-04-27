@@ -103,31 +103,40 @@
     }
   }
 }
-// @media (min-width: 500px) {
-//   .NavigationItem {
-//     margin: 0;
-//     display: flex;
-//     width: auto;
-//     align-items: center;
-//     height: 100%;
 
-//     link {
-//       color: white;
-//       height: 100%;
-//       padding: 16px 10px;
-
-//       &:hover,
-//       &:active,
-//       &.active {
-//         color: #40a4c8;
-//       }
-//     }
-//   }
-
-//   .NavigationItem link:hover,
-//   .NavigationItem link:active,
-//   .NavigationItem link.active {
-//     background-color: #8f5c2c;
-//     color: white;
-//   }
-// }
+@media (min-width: 1860px) {
+  .NavigationItem a {
+    font-size: 48px;
+    line-height: 1.56em;
+  }
+}
+@media (min-width: 1500px) and (max-width: 1859px) {
+  .NavigationItem a {
+    font-size: 48px;
+    line-height: 1.56em;
+  }
+}
+@media (min-width: 1290px) and (max-width: 1499px) {
+  .NavigationItem a {
+    font-size: 48px;
+    line-height: 1.56em;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1289px) {
+  .NavigationItem a {
+    font-size: 48px;
+    line-height: 1.56em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .NavigationItem a {
+    font-size: 48px;
+    line-height: 1.56em;
+  }
+}
+@media (max-width: 767px) {
+  .NavigationItem a {
+    font-size: 34px;
+    line-height: 1.47em;
+  }
+}

@@ -53,6 +53,18 @@ module.exports = {
       },
     },
     // {
+    //   resolve: 'gatsby-wpgraphql-inline-images',
+    //   options: {
+    //     wordPressUrl: 'https://raresrusu.com/',
+    //     uploadsUrl: 'https://raresrusu.com/wp-content/uploads/',
+    //     processPostTypes: ['Page', 'Post', 'CustomPost'],
+    //     graphqlTypeName: 'WPGraphQL',
+    //     // httpHeaders: {
+    //     //   Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    //     // },
+    //   },
+    // },
+    // {
     //   resolve: `gatsby-source-wordpress`,
     //   options: {
     //     // your WordPress source

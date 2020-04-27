@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Transition } from 'react-transition-group';
 
-function appear({ duration, inProp, children }) {
+function appear({ duration = 1000, inProp, children }) {
   const defaultStyle = {
     transition: `all ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`,
     transform: 'translate3d(0, -20px, 0)',
@@ -34,7 +34,7 @@ function appear({ duration, inProp, children }) {
 appear.propTypes = {
   children: PropTypes.node,
   duration: PropTypes.number,
-  inProp: PropTypes.bool,
+  inProp: PropTypes.bool.isRequired,
 };
 
 export default appear;
