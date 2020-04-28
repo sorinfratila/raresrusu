@@ -22,13 +22,18 @@ const portfolio = () => {
         </Appear>
       </div>
 
-      <div className={classes.Title}>
-        <Appear duration={1000} inProp={inProp}>
-          <Headline size="large">Designed by Rares</Headline>
-        </Appear>
-      </div>
+      <Appear duration={1000} inProp={inProp}>
+        <Headline size="large">Designed by Rares</Headline>
+      </Appear>
 
-      <ProjectTile></ProjectTile>
+      <Appear duration={1000} inProp={inProp} delay={400}>
+        <ProjectTile></ProjectTile>
+        <ProjectTile></ProjectTile>
+        <ProjectTile></ProjectTile>
+        <ProjectTile></ProjectTile>
+        <ProjectTile></ProjectTile>
+        <ProjectTile></ProjectTile>
+      </Appear>
     </Aux>
   );
 };
