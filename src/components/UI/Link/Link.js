@@ -24,6 +24,14 @@ function link({ type = 'internal', to, children, clicked, ...other }) {
       );
       break;
     }
+    case 'div': {
+      element = (
+        <div className={classes.Anchor} onClick={clicked} {...other}>
+          {children}
+        </div>
+      );
+      break;
+    }
     default: {
       element = (
         <a className={classes.Anchor} href={to} onClick={clicked} {...other}>

@@ -1,7 +1,7 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-// const path = require(`path`);
+const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
@@ -13,15 +13,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/hoc/Layout/Layout.js`),
+        component: require.resolve(`./src/hoc/Layouts/Layout.js`),
       },
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src`,
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     {

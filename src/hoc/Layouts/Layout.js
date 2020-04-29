@@ -8,26 +8,22 @@ import { LayoutContext } from '../../context/LayoutContext';
 
 const layout = props => {
   const { menuOpen, toggleMenu } = useContext(LayoutContext);
+  const navigationItems = [
+    { name: 'home', to: '' },
+    { name: 'portfolio', to: 'portfolio' },
+    { name: 'about', to: 'about' },
+    { name: 'blog', to: 'blog' },
+    { name: 'contact', to: 'contact' },
+  ];
+
   return (
-    // <LayoutConsumer>
-    //   {({ menuOpen, toggleMenu }) => {
-    //     return (
-    //       <Aux>
-    //         <MenuButton
-    //           clicked={() => toggleMenu({ menuOpen: !menuOpen })}></MenuButton>
-    //         <Menu
-    //           show={menuOpen}
-    //           clicked={() => toggleMenu({ menuOpen: !menuOpen })}></Menu>
-    //         <main>{props.children}</main>
-    //       </Aux>
-    //     );
-    //   }}
-    // </LayoutConsumer>
     <Aux>
       <MenuButton
         clicked={() => toggleMenu({ menuOpen: !menuOpen })}></MenuButton>
       <Menu
+        isMain={true}
         show={menuOpen}
+        menuList={navigationItems}
         clicked={() => toggleMenu({ menuOpen: !menuOpen })}></Menu>
       <main>{props.children}</main>
     </Aux>

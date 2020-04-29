@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import classes from './ProjectTile.module.scss';
 import imgArr from '../../assets/images/portfolio';
 import { isMobile } from 'react-device-detect';
+import Link from '../UI/Link/Link';
 // import Img from 'gatsby-image';
 
-function projectTile({ to }) {
+function projectTile({ to = '/' }) {
   const classesArr = [classes.ProjectTile];
   if (isMobile) {
     classesArr.push('mobile');
@@ -28,6 +28,7 @@ function projectTile({ to }) {
 
 projectTile.propTypes = {
   to: PropTypes.string,
+  data: PropTypes.any,
 };
 
 export default projectTile;

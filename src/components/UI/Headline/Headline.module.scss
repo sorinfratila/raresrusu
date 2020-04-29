@@ -1,7 +1,7 @@
 .Headline {
   color: #000;
   font-weight: 200;
-  margin-top: 350px;
+  padding-top: 350px;
   position: relative;
   width: 100%;
   transition: all 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -26,7 +26,7 @@
   .Headline {
     padding-left: 25px;
     padding-right: 25px;
-    margin-top: 190px;
+    padding-top: 190px;
     margin-bottom: 60px;
 
     &.Large {
@@ -49,7 +49,7 @@
   .Headline {
     padding-left: 70px;
     padding-right: 70px;
-    margin-top: 290px;
+    padding-top: 290px;
     margin-bottom: 100px;
     width: 85%;
 
@@ -73,7 +73,7 @@
   .Headline {
     padding-left: 90px;
     padding-right: 90px;
-    margin-top: 330px;
+    padding-top: 330px;
     margin-bottom: 140px;
     width: 85%;
 
@@ -97,7 +97,7 @@
   .Headline {
     padding-left: 90px;
     padding-right: 90px;
-    margin-top: 350px;
+    padding-top: 350px;
     margin-bottom: 140px;
     width: 70%;
     padding-right: 0 !important;
@@ -122,7 +122,7 @@
   .Headline {
     padding-left: 120px;
     padding-right: 120px;
-    margin-top: 350px;
+    padding-top: 350px;
     margin-bottom: 140px;
     padding-right: 0 !important;
     width: 60%;
@@ -147,7 +147,7 @@
   .Headline {
     padding-left: 160px;
     padding-right: 160px;
-    margin-top: 350px;
+    padding-top: 350px;
     margin-bottom: 140px;
     padding-right: 0 !important;
     width: 60%;
