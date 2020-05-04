@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 import Appear from '../components/Transitions/Appear/Appear';
-import Aux from '../hoc/Aux/Aux';
+// import Aux from '../hoc/Aux/Aux';
 import Headline from '../components/UI/Headline/Headline';
 import ProjectTile from '../components/ProjectTile/ProjectTile';
 import Header from '../components/Header/Header';
+import Aux from '../hoc/Aux/Aux';
 
 const portfolio = () => {
   const [inProp, setInProp] = useState(false);
@@ -22,18 +23,15 @@ const portfolio = () => {
 
   return (
     <Aux>
-      <Appear duration={1000} inProp={inProp}>
-        <Header menuList={navigationItems}>Portfolio</Header>
-        <Headline size="large">Designed by Rares</Headline>
-      </Appear>
-
-      <Appear duration={1000} inProp={inProp} delay={400}>
-        <ProjectTile></ProjectTile>
-        <ProjectTile></ProjectTile>
-        <ProjectTile></ProjectTile>
-        <ProjectTile></ProjectTile>
-        <ProjectTile></ProjectTile>
-      </Appear>
+      <Header title="Portfolio" menuList={navigationItems}></Header>
+      {/* ?<Appear duration={1000} inProp={inProp}> */}
+      <Headline size="large">Designed by Rares</Headline>
+      <ProjectTile></ProjectTile>
+      <ProjectTile></ProjectTile>
+      <ProjectTile></ProjectTile>
+      <ProjectTile></ProjectTile>
+      <ProjectTile></ProjectTile>
+      {/* </Appear> */}
     </Aux>
   );
 };

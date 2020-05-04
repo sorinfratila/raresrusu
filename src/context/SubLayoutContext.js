@@ -14,7 +14,7 @@ export const SubLayoutProvider = props => {
     <SubLayoutContext.Provider
       value={{
         menuOpen,
-        toggleMenu: () => toggleMenu(!menuOpen),
+        toggleMenu: res => toggleMenu(res),
       }}>
       {props.children}
     </SubLayoutContext.Provider>

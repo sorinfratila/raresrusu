@@ -7,7 +7,7 @@ import Menu from '../../components/Navigation/Menu/Menu';
 import { LayoutContext } from '../../context/LayoutContext';
 
 const layout = props => {
-  const { menuOpen, toggleMenu } = useContext(LayoutContext);
+  const { mainMenuOpen, toggleMainMenu } = useContext(LayoutContext);
   const navigationItems = [
     { name: 'home', to: '' },
     { name: 'portfolio', to: 'portfolio' },
@@ -18,13 +18,13 @@ const layout = props => {
 
   return (
     <Aux>
-      <MenuButton
-        clicked={() => toggleMenu({ menuOpen: !menuOpen })}></MenuButton>
+      <MenuButton clicked={() => toggleMainMenu(!mainMenuOpen)}></MenuButton>
       <Menu
         isMain={true}
-        show={menuOpen}
+        show={mainMenuOpen}
         menuList={navigationItems}
-        clicked={() => toggleMenu({ menuOpen: !menuOpen })}></Menu>
+        clicked={() => toggleMainMenu(!mainMenuOpen)}
+        backdropClicked={() => toggleMainMenu(false)}></Menu>
       <main>{props.children}</main>
     </Aux>
   );

@@ -5,13 +5,13 @@ import Aux from '../../../hoc/Aux/Aux';
 import classes from './Menu.module.scss';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
-function Menu({ clicked, show, menuList, isMain }) {
+function Menu({ clicked, show, menuList, isMain, backdropClicked }) {
   const classesArr = isMain ? [classes.MenuItems] : [classes.MenuItemsLeft];
   if (show) classesArr.push(classes.Shown);
 
   return (
     <Aux>
-      <Backdrop show={show} clicked={clicked}></Backdrop>
+      <Backdrop show={show} clicked={backdropClicked}></Backdrop>
       <div className={classesArr.join(' ')}>
         <NavigationItems
           items={menuList}
@@ -28,6 +28,7 @@ Menu.propTypes = {
   linkClicked: PropTypes.func,
   menuList: PropTypes.array,
   isMain: PropTypes.bool,
+  backdropClicked: PropTypes.func,
 };
 
 export default Menu;

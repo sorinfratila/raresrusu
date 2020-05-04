@@ -6,8 +6,9 @@ function appear({ duration = 1000, inProp, children, delay = 0 }) {
   const defaultStyle = {
     transition: `all ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`,
     transform: 'translate3d(0, 20px, 0)',
-    transitionDelay: `${delay}ms`,
+    // transitionDelay: `${delay}ms`,
     opacity: 0,
+    willChange: 'transform',
   };
 
   const transitionStyles = {
